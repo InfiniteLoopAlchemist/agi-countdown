@@ -1,0 +1,9 @@
+services:
+  agi-countdown:
+    build: .
+    container_name: agi-countdown
+    ports:
+      - '4555:3000'
+    volumes:
+      - /volume1/Hideout-Server/data/apps/agi-countdown:/app
+    restart: unless-stopped
