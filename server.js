@@ -5,6 +5,11 @@ const cron = require('node-cron');
 const express = require('express');
 
 // Function to take screenshot with retry mechanism
+/**
+ * Takes a screenshot of a specific portion of a webpage. can take a few min to complete
+ * @param {number} [attempt=1] - The current attempt number. Defaults to 1.
+ * @return {Promise<void>} - Resolves when the screenshot is taken successfully or when maximum retry attempts are reached.
+ */
 async function takeScreenshot( attempt = 1 ) {
     console.log(`Attempt ${ attempt } to take screenshot`);
     
@@ -76,5 +81,5 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${ PORT }`);
 });
 
-// Take an initial screenshot on startup
+// Take an initial screenshot on startup can take a few min to complete
 takeScreenshot().catch(error => console.error('Error in initial screenshot:', error));
