@@ -2,6 +2,10 @@ services:
   agi-countdown:
     build: .
     container_name: agi-countdown
+    environment:
+      - NODE_ENV=production
+    labels:
+      com.centurylinklabs.watchtower.enable: "false"
     ports:
       - '45500:3000'
     volumes:
