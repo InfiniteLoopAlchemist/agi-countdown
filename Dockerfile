@@ -1,5 +1,5 @@
 # Use the official Node.js 18 image from the Docker Hub
-FROM node:18
+FROM node:20.15.1
 
 # Install necessary dependencies for Puppeteer
 RUN apt-get update && apt-get install -y \
